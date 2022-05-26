@@ -6,11 +6,6 @@ import { SignupComponent } from './components/authentication/signup/signup.compo
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-    },
-    {
         path: 'login',
         component: LoginComponent
     },
@@ -21,7 +16,11 @@ const routes: Routes = [
     {
         path: 'forget-password',
         component: ForgetPasswordComponent
-    }
+    },
+    { 
+        path: 'dashboard', 
+        loadChildren: () => import('./components/dashboard/dashboard.module').then(m => m.DashboardModule) 
+    },
 ];
 
 @NgModule({
