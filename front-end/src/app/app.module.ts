@@ -15,6 +15,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
+import { ApiServices } from './services/api-services.service';
+
 const antdModule= [
   NzFormModule,
   NzInputModule,
@@ -37,7 +39,7 @@ const antdModule= [
     ReactiveFormsModule,
     ...antdModule
   ],
-  providers: [],
+  providers: [ApiServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
